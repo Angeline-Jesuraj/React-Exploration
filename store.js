@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { configureStore, applyMiddleware } from "@reduxjs/toolkit";
 import rootReducer from "./reducers";
 import createSagaMiddleware from "redux-saga";
@@ -13,4 +14,13 @@ const store = configureStore({
 sagaMiddleware.run(watchIncrementAsync);
 sagaMiddleware.run(watchDecrementAsync);
 
+=======
+import { configureStore } from '@reduxjs/toolkit';
+import rootReducer from './src/reducers';
+
+const store = configureStore({
+  reducer: rootReducer,
+});
+
+>>>>>>> 45aa7c993ea6e130c49c5355bf1487d9326f3b93
 export default store;
