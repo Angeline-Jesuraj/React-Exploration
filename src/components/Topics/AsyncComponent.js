@@ -1,6 +1,7 @@
 // Example for Asynchronous Operation
+import axios from 'axios';
 import React, { useState } from 'react'
-import axios from 'axios'
+
 
 const AsyncComponent = () => {
   const [data, setData] = useState(null)

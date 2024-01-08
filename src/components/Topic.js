@@ -13,6 +13,8 @@ function Topic() {
         <Link to="/apicomponent">ApiComponent</Link>
         <Link to="/numberinputprops">NumberInputProps</Link>
         <Link to="/datavisual">DataVisualizationEg</Link>
+        <Link to ="/loginForm">LoginForm</Link>
+        <Link to ="/reduxsagaeg">Redux Saga Eg</Link>
       </nav>
     </div>
   )

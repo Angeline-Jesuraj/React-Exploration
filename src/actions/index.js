@@ -1,19 +1,22 @@
-<<<<<<< HEAD
 export const increment = () => ({ type: 'INCREMENT' })
 
 export const decrement = () => ({ type: 'DECREMENT' })
 
-export const incrementAsync = () => ({ type: 'INCREMENT_ASYNC' })
 
-export const decrementAsync = () => ({ type: 'DECREMENT_ASYNC' })
-=======
+export const FETCH_USER_REQUEST = 'FETCH_USER_REQUEST';
+export const FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS';
+export const FETCH_USER_FAILURE = 'FETCH_USER_FAILURE';
 
-export const increment = () => {
-    return { type: 'INCREMENT' };
-  };
-  
-  export const decrement = () => {
-    return { type: 'DECREMENT' };
-  };
-  
->>>>>>> 45aa7c993ea6e130c49c5355bf1487d9326f3b93
+export const fetchUser = () => ({
+  type: FETCH_USER_REQUEST,
+});
+
+export const fetchUserSuccess = (user) => ({
+  type: FETCH_USER_SUCCESS,
+  payload: user,
+});
+
+export const fetchUserFailure = (error) => ({
+  type: FETCH_USER_FAILURE,
+  payload: error,
+});

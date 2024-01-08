@@ -1,13 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { increment, decrement } from '../actions'
-import { useOktaAuth } from '@okta/okta-react'
-import DisLike from '../icons/DisLike'
-import Like from '../icons/Like'
-import { incrementAsync, decrementAsync } from '../actions'
-
-const Home = ({ value, incrementAsync, decrementAsync }) => {
+import React from 'react';
+import { connect } from 'react-redux';
+import { increment, decrement } from '../actions';
+import { useOktaAuth } from '@okta/okta-react';
+import DisLike from '../icons/DisLike';
+import Like from '../icons/Like';
+import PropTypes from 'prop-types';
+const Home = ({ value, increment, decrement }) => {
   // const { authState, authService } = useOktaAuth();
   // const login = async () => {
   //   await authService.login('/');
@@ -16,35 +14,31 @@ const Home = ({ value, incrementAsync, decrementAsync }) => {
   // const logout = async () => {
   //   await authService.logout('/');
   // };
-
+  
   return (
     <>
       <h2>Home</h2>
+    
+        <div>
+          <p>Count: {value}</p>
+          <button onClick={increment}><Like/></button>
+          <button onClick={decrement}><DisLike/></button>
+        </div>
 
-      <div>
-        <p>Count: {value}</p>
-        <button onClick={() => incrementAsync()}>
-          <Like />
-        </button>
-        <button onClick={() => decrementAsync()}>
-          <DisLike />
-        </button>
-      </div>
     </>
-  )
-}
+  );
+};
 
 const mapStateToProps = (state) => {
   return {
     value: state.example.value,
-  }
-}
+  };
+};
+
+
 Home.propTypes = {
   value: PropTypes.number.isRequired,
-  incrementAsync: PropTypes.func.isRequired,
-  decrementAsync: PropTypes.func.isRequired,
-}
-
-export default connect(mapStateToProps, { incrementAsync, decrementAsync })(
-  Home,
-)
+  increment: PropTypes.func.isRequired,
+  decrement: PropTypes.func.isRequired,
+};
+export default connect(mapStateToProps, { increment, decrement })(Home);
