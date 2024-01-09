@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -47,7 +48,6 @@ const LoginForm = () => {
     setPassword('');
     setFormErrors([]);
   };
-
   return (
     <div>
       <h2>Login Form</h2>
@@ -74,8 +74,18 @@ const LoginForm = () => {
           Reset
         </button>
       </form>
+      {/* <h1>Value Fetched from Store : {value}</h1>   */}
     </div>
   );
 };
+// const mapStateToProps = (state) => {
+//   return {
+//     value: state.example.value,
+//   };
+// };
 
-export default LoginForm;
+LoginForm.propTypes = {
+  value: PropTypes.number.isRequired,
+};
+// export default connect(mapStateToProps)(LoginForm);
+export default (LoginForm);

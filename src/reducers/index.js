@@ -35,6 +35,7 @@ const reducer = (state = initialState, action) => {
 };
 const rootReducer = combineReducers({
   example: exampleReducer,
+  reducer:reducer
 });
 
 export default rootReducer;

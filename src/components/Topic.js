@@ -1,8 +1,6 @@
 
 import React from 'react'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import SyncComponent from './Topics/SyncComponent'
-import AsyncComponent from './Topics/AsyncComponent'
+import {  Link } from 'react-router-dom'
 function Topic() {
   return (
     <div>
@@ -15,6 +13,7 @@ function Topic() {
         <Link to="/datavisual">DataVisualizationEg</Link>
         <Link to ="/loginForm">LoginForm</Link>
         <Link to ="/reduxsagaeg">Redux Saga Eg</Link>
+        <Link to ="/reduceg">Redux Example</Link>
       </nav>
     </div>
   )
