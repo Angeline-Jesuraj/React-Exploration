@@ -15,6 +15,8 @@ import UserComponent from './components/Topics/UserComponent.js'
 import ReduxEg from "./components/redux/ReduxEg.js"
 import store from './store'
 import Header from './components/redux/Header.js'
+import SagaEg from './components/saga/SagaEg.js'
+
 // import { Security, SecureRoute, LoginCallback } from '@okta/okta-react';
 // import oktaConfig from './oktaConfig';
 function App() {
@@ -38,6 +40,7 @@ function App() {
           <Route path="/datavisual" element={<DataVisualizationEg/>} />
           <Route path="/loginForm" element ={<LoginForm/>}/>
           <Route path ="/reduxsagaeg" element ={<UserComponent/>}/>
+          <Route path ="/SagaFetchEg" element ={<SagaEg/>}/>
           {/* <SecureRoute path="/" element={<Home />} /> */}
           <Route path="/" element={<Home />} />
           <Route path="/reduceg" element={<ReduxEg/>}/>

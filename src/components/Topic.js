@@ -14,6 +14,7 @@ function Topic() {
         <Link to ="/loginForm">LoginForm</Link>
         <Link to ="/reduxsagaeg">Redux Saga Eg</Link>
         <Link to ="/reduceg">Redux Example</Link>
+        <Link to="/SagaFetchEg">Redux-Saga Example</Link>
       </nav>
     </div>
   )
