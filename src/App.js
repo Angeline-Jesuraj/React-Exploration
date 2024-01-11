@@ -16,7 +16,7 @@ import ReduxEg from "./components/redux/ReduxEg.js"
 import store from './store'
 import Header from './components/redux/Header.js'
 import SagaEg from './components/saga/SagaEg.js'
-
+import Cart from './components/redux/Cart.js'
 // import { Security, SecureRoute, LoginCallback } from '@okta/okta-react';
 // import oktaConfig from './oktaConfig';
 function App() {
@@ -24,8 +24,9 @@ function App() {
     <Provider store={store}>
       {/* <Security {...oktaConfig}> */}
       {/* <div>Hello !!!!!!!!!!!!</div> */}
-      <Header/>
+   
       <BrowserRouter>
+      <Header/>
         <nav>
           <Link to="/">Home</Link>
           <Link to="/topics">Topics</Link>
@@ -44,6 +45,7 @@ function App() {
           {/* <SecureRoute path="/" element={<Home />} /> */}
           <Route path="/" element={<Home />} />
           <Route path="/reduceg" element={<ReduxEg/>}/>
+          <Route path="/cart" element={<Cart/>}/>
         </Routes>
       </BrowserRouter>
       {/* </Security> */}

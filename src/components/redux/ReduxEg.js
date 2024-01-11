@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { addToCart, removeToCart, emptyToCart } from './action'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
@@ -9,20 +9,23 @@ export default function ReduxEg() {
   const dispatch = useDispatch()
   let data = useSelector((state) => state.productData)
   console.log('Data in main com', data)
-  const product = {
-    name: 'samsung S23 Ultra',
-    category: 'mobile',
-    price: 10000,
-    color: 'purple',
-  }
+  // const product = {
+  //   name: 'samsung S23 Ultra',
+  //   category: 'mobile',
+  //   price: 10000,
+  //   color: 'purple',
+  // }
+  useEffect(()=>{
+dispatch(productList())
+  },[])
   return (
     <div>
-      <button onClick={() => dispatch(addToCart(product))}>Add To Cart</button>
+      {/* <button onClick={() => dispatch(addToCart(product))}>Add To Cart</button>
       <button onClick={() => dispatch(removeToCart(product.name))}>
         Remove From Cart
-      </button>
-      <button onClick={() => dispatch(emptyToCart(product))}>Empty Cart</button>
-      <button onClick={() => dispatch(productList())}>Call Product List</button>
+      </button> */}
+      <button onClick={() => dispatch(emptyToCart())}>Empty Cart</button>
+      {/* <button onClick={() => dispatch(productList())}>Call Product List</button> */}
       <div className='product-container'>
         {
           data.map((item,index)=>
@@ -34,8 +37,8 @@ export default function ReduxEg() {
             <div> Category:{item.category} </div>
             <div> Brand:{item.brand} </div>
             <div>
-              <button>Add To Cart</button>
-              <button>Remove To Cart</button>
+              <button onClick={() => dispatch(addToCart(item))}>Add To Cart</button>
+              <button onClick={() => dispatch(removeToCart(item.id))}>Remove To Cart</button>
               </div>
           </div>
 
